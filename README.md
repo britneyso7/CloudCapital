@@ -18,26 +18,10 @@ user possess in their *account*. With this app, as there are no communications b
 *withdrawal* and *deposit* activities of a *client's* account from an arbitrary financial institution (built into the 
 application) will be tracked.
 
-### User Stories
-
-- As a client, I want to be able to add funds to my account
-- As a client, I want to be able to withdraw funds from my account
-- As a client, I want to be able to **open multiple accounts of any kind**
-- As a client, I want to be able to **open different types of accounts**
-- As a client, I want to be able to transfer funds between accounts
-- As a client, I want to be able to **view my account totals and history**
-- As a client, I want to be able to **view multiple account totals at once**
-- As a client, I want to be able to download my transaction history for each account
-
-
-
-
-
-
 
 **Key Features**:
-- Account Management: Effortlessly create and oversee multiple accounts, including savings and checking.
 
+- Account Management: Effortlessly create and oversee multiple accounts, including savings and checking.
 
 - Transaction History: Review detailed transaction records, including date, time, and amount information.
 
@@ -54,4 +38,13 @@ application) will be tracked.
 - Conversion Rates: Able to convert certain amounts across different fiat currencies
 
 
-## User Stories
+### User Stories
+
+- As a client, I want to be able to add funds to my account
+- As a client, I want to be able to withdraw funds from my account
+- As a client, I want to be able to **open multiple accounts of any kind**
+- As a client, I want to be able to **open different types of accounts**
+- As a client, I want to be able to transfer funds between accounts
+- As a client, I want to be able to **view my account totals and history**
+- As a client, I want to be able to **view multiple account totals at once**
+- As a client, I want to be able to download my transaction history for each account
