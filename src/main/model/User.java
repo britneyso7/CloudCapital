@@ -40,15 +40,14 @@ public class User {
         userAccounts.add(acc);
     }
 
-    public void transferFunds(int aNum, int bNum, double fund) {
+    public void transferFunds(int aaaNum, int bbbNum, double fund) {
         Account takeFromAccount = null;
         Account giveToAccount  = null;
 
         for (int i = 0; i < userAccounts.size(); i++) {
-            if (userAccounts.get(i).getAccountNum() == aNum) {
+            if (userAccounts.get(i).getAccountNum() == aaaNum) {
                 takeFromAccount = userAccounts.get(i);
-            }
-            else if (userAccounts.get(i).getAccountNum() == bNum) {
+            } else if (userAccounts.get(i).getAccountNum() == bbbNum) {
                 giveToAccount = userAccounts.get(i);
             }
         }

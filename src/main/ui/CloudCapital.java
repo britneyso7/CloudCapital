@@ -39,10 +39,6 @@ public class CloudCapital {
                 System.out.println("What account do you want to add funds to?");
             } else if (operation == '2') {
                 System.out.println("What account do you want to withdraw funds from?");
-            } else if (operation == '3') {
-            } else if (operation == '4') {
-            } else if (operation == 'x') {
-                break;
             } else {
                 System.out.println("You did not make a valid selection please choose an operation or exit");
             }
