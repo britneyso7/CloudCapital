@@ -7,8 +7,9 @@ public class User {
     private String userName;
     private ArrayList<Account> userAccounts;
 
-    public User(String userName) {
-        userName = userName;
+    public User(String userName, int userID) {
+        this.userName = userName;
+        this.userID = userID;
     }
 
     public int getUserID() {
@@ -27,12 +28,32 @@ public class User {
         return userAccounts;
     }
 
+    public void addFunds(Account a, double amount) {
+        a.addFunds(amount);
+    }
+
+    public void withdrawFunds(Account a, double amount) {
+        a.withdrawFunds(amount);
+    }
+
     public void addUserAccounts(Account acc) {
         userAccounts.add(acc);
     }
 
-    public void transferFunds(int aum, int bum, double fund) {
+    public void transferFunds(int aNum, int bNum, double fund) {
+        Account takeFromAccount = null;
+        Account giveToAccount  = null;
 
+        for (int i = 0; i < userAccounts.size(); i++) {
+            if (userAccounts.get(i).getAccountNum() == aNum) {
+                takeFromAccount = userAccounts.get(i);
+            }
+            else if (userAccounts.get(i).getAccountNum() == bNum) {
+                giveToAccount = userAccounts.get(i);
+            }
+        }
+
+        takeFromAccount.withdrawFunds(fund);
+        giveToAccount.addFunds(fund);
     }
-
 }
