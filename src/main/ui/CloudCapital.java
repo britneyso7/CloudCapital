@@ -21,9 +21,9 @@ public class CloudCapital {
         runCloudCapital();
     }
 
-    public User currentUser;
+    private User currentUser;
 
-    private void runCloudCapital() {
+    public void runCloudCapital() {
         input = new Scanner(System.in);
         idCount = 0;
         boolean keepGoing = true;
@@ -44,13 +44,13 @@ public class CloudCapital {
         System.out.println("You are now exiting CloudCapital, Goodbye");
     }
 
-    private User createUser() {
+    public User createUser() {
         System.out.println("What is your name?");
         String name = input.nextLine();
         return (new User(name, idCount++));
     }
 
-    private void processSelection(User currentUser, int operation) {
+    public void processSelection(User currentUser, int operation) {
         if (operation == '1') {
             addFunds(currentUser);
         } else if (operation == '2') {
@@ -64,7 +64,7 @@ public class CloudCapital {
         }
     }
 
-    private void addFunds(User currentUser) {
+    public void addFunds(User currentUser) {
         System.out.println("Enter the account number you want to add to");
         System.out.println(currentUser.accountsToString());
         Account a = currentUser.getUserAccounts().get(input.nextInt());
@@ -75,7 +75,7 @@ public class CloudCapital {
         System.out.println("Deposit complete!");
     }
 
-    private void withdrawFunds(User currentUser) {
+    public void withdrawFunds(User currentUser) {
         System.out.println("Enter the account number you want to withdraw from");
         System.out.println(currentUser.accountsToString());
         Account a = currentUser.getUserAccounts().get(input.nextInt());
@@ -86,7 +86,7 @@ public class CloudCapital {
         System.out.println("Deposit complete!");
     }
 
-    private void createNewAccount(User u) {
+    public void createNewAccount(User u) {
         int accountType = 0;
         while (accountType < 1 || accountType > 2) {
             System.out.println("What kind of account do you want to create? \n"
@@ -105,14 +105,14 @@ public class CloudCapital {
         System.out.println("Account created!");
     }
 
-    private void printGreeting() {
+    public void printGreeting() {
         System.out.println("--------------------------------------------");
         System.out.println("Welcome to Cloud Capital");
         System.out.println("\tStart by creating an account");
         System.out.println("--------------------------------------------");
     }
 
-    private void printMenu() {
+    public void printMenu() {
         System.out.println("Please select from the following (input the number/letter of the desired operation");
         System.out.println("1. Add Funds");
         System.out.println("2. Withdraw Funds");
