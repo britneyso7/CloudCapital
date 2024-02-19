@@ -35,7 +35,7 @@ public class User {
 
     public String accountsToString() {
         String output = " ";
-        for (int i=0; i <userAccounts.size(); i++) {
+        for (int i = 0; i < userAccounts.size(); i++) {
             output += "\n";
             output += "Account: " + userAccounts.get(i).getAccountNum() + ", ";
             output += "Type: " + userAccounts.get(i).getAccountType();
