@@ -1,8 +1,9 @@
 package model;
 
+import model.Account;
+import model.User;
 import ui.CloudCapital;
 import ui.Main;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -33,7 +34,7 @@ public class CloudCapitalTests {
     }
 
     @Test
-    void testAccountWithdrawal(){
+    void testAccountWithdrawl(){
         testUser.withdrawFunds(testUser.getUserAccounts().get(0), 250);
         assertEquals(-250, testUser.getUserAccounts().get(0).getFunds());
     }
@@ -67,49 +68,38 @@ public class CloudCapitalTests {
 
     }
 
-//    @Test
-//    void testCloudCapitalDeposit() {
-//        String simulatedInput = "Britney\n1\n0\n500\nx\n";
-//        ByteArrayInputStream inputStream = new ByteArrayInputStream(simulatedInput.getBytes());
-//        System.setIn(inputStream);
-//        testCloudCapital = new CloudCapital();
-//        assertEquals(500, testCloudCapital.currentUser.getUserAccounts().get(0).getFunds());
-//    }
-//
-//    @Test
-//    void testCloudCapitalWithdrawal() {
-//        String simulatedInput = "Britney\n2\n0\n500\nx\n";
-//        ByteArrayInputStream inputStream = new ByteArrayInputStream(simulatedInput.getBytes());
-//        System.setIn(inputStream);
-//        testCloudCapital = new CloudCapital();
-//        assertEquals(-500, testCloudCapital.currentUser.getUserAccounts().get(0).getFunds());
-//    }
-//
-//    @Test
-//    void testCloudCapitalNewChequingAccount() {
-//        String simulatedInput = "Britney\n3\n1\n4\nx";
-//        ByteArrayInputStream inputStream = new ByteArrayInputStream(simulatedInput.getBytes());
-//        System.setIn(inputStream);
-//        testCloudCapital = new CloudCapital();
-//        assertEquals(
-//                "\nAccount: 0, Type: ChequingBalance: $0.0\n" +
-//                        "Account: 1, Type: chequingBalance: $0.0",
-//                testCloudCapital.currentUser.accountsToString()
-//        );
-//    }
-//
-//    @Test
-//    void testCloudCapitalNewSavingsAccount() {
-//        String simulatedInput = "Britney\n3\n3\n2\n4\nx";
-//        ByteArrayInputStream inputStream = new ByteArrayInputStream(simulatedInput.getBytes());
-//        System.setIn(inputStream);
-//        testCloudCapital = new CloudCapital();
-//        assertEquals(
-//                "\nAccount: 0, Type: ChequingBalance: $0.0\n" +
-//                        "Account: 1, Type: savingsBalance: $0.0",
-//                testCloudCapital.currentUser.accountsToString()
-//        );
-//    }
+    @Test
+    void testCCDesposit(){
+        String simulatedInput = "Britney\nx\n0\n500\n";
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(simulatedInput.getBytes());
+        System.setIn(inputStream);
+        testCloudCapital = new CloudCapital();
+        testCloudCapital.processSelection(testUser, 1);
+        testCloudCapital.addFunds(testUser);
+        assertEquals(500, testUser.getUserAccounts().get(0).getFunds());
+    }
+
+    @Test
+    void testCCWithdraw(){
+        String simulatedInput = "Britney\nx\n0\n500\n";
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(simulatedInput.getBytes());
+        System.setIn(inputStream);
+        testCloudCapital = new CloudCapital();
+        testCloudCapital.processSelection(testUser, 1);
+        testCloudCapital.withdrawFunds(testUser);
+        assertEquals(-500, testUser.getUserAccounts().get(0).getFunds());
+    }
+
+    @Test
+    void testCCPrint(){
+        String simulatedInput = "Britney\n4";
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(simulatedInput.getBytes());
+        System.setIn(inputStream);
+        assertEquals(
+                "\nAccount: 0, Type: ChequingBalance: $0.0",
+                testUser.accountsToString()
+        );
+    }
 
     //MAIN LEVEL TEST
     @Test

@@ -16,12 +16,11 @@ import java.util.Scanner;
 public class CloudCapital {
     Scanner input;
     private static int idCount;
+    private User currentUser;
 
     public CloudCapital() {
         runCloudCapital();
     }
-
-    private User currentUser;
 
     public void runCloudCapital() {
         input = new Scanner(System.in);
@@ -80,7 +79,7 @@ public class CloudCapital {
         System.out.println(currentUser.accountsToString());
         Account a = currentUser.getUserAccounts().get(input.nextInt());
         input.nextLine();
-        System.out.println("How much are you withdrawing?");
+        System.out.println("How much are you withrdawing?");
         a.withdrawFunds(input.nextDouble());
         input.nextLine();
         System.out.println("Deposit complete!");
@@ -90,7 +89,7 @@ public class CloudCapital {
         int accountType = 0;
         while (accountType < 1 || accountType > 2) {
             System.out.println("What kind of account do you want to create? \n"
-                    + "(Enter the number of the account type)");
+                    + "(Enter the number of the acocunt type)");
             System.out.println("1. Chequing\n2. Savings");
             accountType = input.nextInt();
             input.nextLine();
@@ -113,7 +112,7 @@ public class CloudCapital {
     }
 
     public void printMenu() {
-        System.out.println("Please select from the following (input the number/letter of the desired operation");
+        System.out.println("Please select from the following (input the number or letter of the desired operation");
         System.out.println("1. Add Funds");
         System.out.println("2. Withdraw Funds");
         System.out.println("3. Create new account");

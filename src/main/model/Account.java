@@ -30,7 +30,4 @@ public class Account {
         return funds;
     }
 
-
-
-
 }
