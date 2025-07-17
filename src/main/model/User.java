@@ -32,6 +32,12 @@ public class User {
         return userAccounts;
     }
 
+/**
+ * EFFECTS: Returns a string summary of all accounts under
+ * this user with the account ID, type, and balance for each 
+ * account with each account.
+ * 
+ */
     public String accountsToString() {
         String output = " ";
         for (int i = 0; i < userAccounts.size(); i++) {
