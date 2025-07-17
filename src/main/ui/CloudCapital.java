@@ -94,9 +94,9 @@ public class CloudCapital {
             accountType = input.nextInt();
             input.nextLine();
             if (accountType == 1) {
-                u.addUserAccount(new Account(idCount, "chequing"));
+                u.addUserAccount(new Account(idCount, "chequing", 0));
             } else if (accountType == 2) {
-                u.addUserAccount(new Account(idCount, "savings"));
+                u.addUserAccount(new Account(idCount, "savings", 0));
             } else {
                 System.out.println("That was no a valid selection, please try again");
             }

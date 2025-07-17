@@ -19,7 +19,7 @@ public class CloudCapitalTests {
     @BeforeEach
     void testSetup() {
         testUser = new User("bso7", 3);
-        testAccount = new Account(1, "chequing");
+        testAccount = new Account(1, "chequing", 0);
     }
 
     @Test
@@ -57,9 +57,9 @@ public class CloudCapitalTests {
 
     @Test
     void testCreateAccount(){
-        testUser.addUserAccount(new Account(2,"savings"));
+        testUser.addUserAccount(new Account(2,"savings", 0));
         assertEquals("savings", testUser.getUserAccounts().get(1).getAccountType());
-        testUser.addUserAccount(new Account(3,"chequing"));
+        testUser.addUserAccount(new Account(3,"chequing", 0));
         assertEquals("chequing", testUser.getUserAccounts().get(2).getAccountType());
     }
 

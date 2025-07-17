@@ -15,10 +15,9 @@ public class User {
     public User(String userName, int userID) {
         this.userName = userName;
         this.userID = userID;
-        this.idCount = 0;
         this.userAccounts = new ArrayList<Account>();
-        // For phase 1: Users will have a fixed limit of 2 accounts
-        addUserAccount(new Account(idCount++, "Chequing"));
+       
+        addUserAccount(new Account(idCount++, "Chequing", 0));
     }
 
     public int getUserID() {
