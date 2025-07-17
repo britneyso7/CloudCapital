@@ -2,6 +2,10 @@ package model;
 
 import java.util.ArrayList;
 
+/**
+ * Represents a user in banking system with unique ID
+ * name, and a list of an arbitrary amount of bank accounts
+ */
 public class User {
     private int userID;
     private String userName;
@@ -40,14 +44,32 @@ public class User {
         return output;
     }
 
+/**
+ * REQUIRES: a != null, amount >= 0
+ * MODIFIES: a
+ * EFFECTS: Adds funds to the given account
+ * @param a
+ * @param amount
+ */
     public void addFunds(Account a, double amount) {
         a.addFunds(amount);
     }
+
+/**
+ * REQUIRES: a != null, amount >= 0
+ * MODIFIES: a
+ * EFFECTS: Withdraws funds from given account
+ */
 
     public void withdrawFunds(Account a, double amount) {
         a.withdrawFunds(amount);
     }
 
+/**
+ * REQUIRES: acc != null
+ * MODIFIES: acc
+ * EFFECTS: Adds acc to a list of User accounts
+ */
     public void addUserAccount(Account acc) {
         userAccounts.add(acc);
     }
