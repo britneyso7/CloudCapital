@@ -11,7 +11,7 @@ public class Account {
     public Account(int accountNum, String accountType, double funds) {
         this.accountNum = accountNum;
         this.accountType = accountType;
-        this.funds = 0;
+        this.funds = funds;
     }
 
     public int getAccountNum() {
