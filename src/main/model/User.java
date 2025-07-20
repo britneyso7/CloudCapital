@@ -82,4 +82,25 @@ public class User {
         userAccounts.add(acc);
     }
 
+
+// Modelled from WorkRoom in JsonSerializationDemo project
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("userName", userName);      // 
+        json.put("userID", userID);          // 
+        json.put("accounts", accountsToJson());
+        return json;
+}
+
+// EFFECTS: returns accounts in this user as a JSON array
+        private JSONArray accountsToJson() {
+            JSONArray jsonArray = new JSONArray();
+
+            for (Account account : userAccounts) {   // Replace with your list field name
+                jsonArray.put(account.toJson());
+            }
+
+            return jsonArray;
+        }
 }
