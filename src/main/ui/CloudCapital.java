@@ -6,6 +6,9 @@ import model.*;
 
 import java.util.Scanner;
 
+import org.json.JSONObject;
+import org.json.JSONArray;
+
 /*
     For phase 1 the following user stories are addressed
     1) As a client, I want to be able to add funds to my account

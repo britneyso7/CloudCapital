@@ -11,6 +11,9 @@ import java.io.ByteArrayInputStream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.json.JSONObject;
+import org.json.JSONArray;
+
 public class CloudCapitalTests {
     private User testUser;
     private Account testAccount;

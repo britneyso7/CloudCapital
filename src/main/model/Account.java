@@ -1,5 +1,8 @@
 
 package model;
+
+import org.json.JSONObject;
+import org.json.JSONArray;
 /** 
  * Bank Account with account number, account type and current funds
  */

@@ -2,6 +2,9 @@ package model;
 
 import java.util.ArrayList;
 
+import org.json.JSONObject;
+import org.json.JSONArray;
+
 /**
  * Represents a user in banking system with unique ID
  * name, and a list of an arbitrary amount of bank accounts
