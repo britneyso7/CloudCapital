@@ -45,7 +45,9 @@ public class CloudCapitalTests {
 
     @Test
     void testAccountToString(){
-        assertEquals("\nAccount: 0, Type: ChequingBalance: $0.0", testUser.accountsToString());
+        int id = testUser.getUserAccounts().get(0).getAccountNum();
+
+        assertEquals("\nAccount: " + id +", Type: ChequingBalance: $0.0", testUser.accountsToString());
     }
 
     //USER LEVEL TESTS
@@ -92,17 +94,6 @@ public class CloudCapitalTests {
         testCloudCapital.processSelection(testUser, 1);
         testCloudCapital.withdrawFunds(testUser);
         assertEquals(-500, testUser.getUserAccounts().get(0).getFunds());
-    }
-
-    @Test
-    void testCCPrint(){
-        String simulatedInput = "Britney\n4";
-        ByteArrayInputStream inputStream = new ByteArrayInputStream(simulatedInput.getBytes());
-        System.setIn(inputStream);
-        assertEquals(
-                "\nAccount: 0, Type: ChequingBalance: $0.0",
-                testUser.accountsToString()
-        );
     }
 
     //MAIN LEVEL TEST

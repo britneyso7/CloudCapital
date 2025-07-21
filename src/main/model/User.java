@@ -42,7 +42,7 @@ public class User {
  * 
  */
     public String accountsToString() {
-        String output = " ";
+        String output = "";
         for (int i = 0; i < userAccounts.size(); i++) {
             output += "\n";
             output += "Account: " + userAccounts.get(i).getAccountNum() + ", ";
