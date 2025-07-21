@@ -48,3 +48,5 @@ application) will be tracked.
 - As a client, I want to be able to **view my account totals and history**
 - As a client, I want to be able to **view multiple account totals at once**
 - As a client, I want to be able to download my transaction history for each account
+- As a client, I want to be able to save my account data so that I can access it next time I use the application
+- As a user, I want to be able to load my previous saved account date from so that I can continue from where I left off.
