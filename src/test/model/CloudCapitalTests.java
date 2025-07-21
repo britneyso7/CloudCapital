@@ -23,6 +23,8 @@ public class CloudCapitalTests {
     void testSetup() {
         testUser = new User("bso7", 3);
         testAccount = new Account(1, "chequing", 0);
+
+        User.resetIdCounter();
     }
 
     @Test

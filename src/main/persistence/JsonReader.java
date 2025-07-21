@@ -44,7 +44,6 @@ public class JsonReader {
     // EFFECTS: parses workroom from JSON object and returns it
     private User parseUser(JSONObject jsonObject) {
 
-        
         String userName = jsonObject.getString("userName");
         int userID = jsonObject.getInt("userID");
         User user = new User(userName, userID);
@@ -52,10 +51,10 @@ public class JsonReader {
         return user;
     }
 
-    // MODIFIES: wr
+    // MODIFIES: user
     // EFFECTS: parses thingies from JSON object and adds them to workroom
     private void addAccounts(User user, JSONObject jsonObject) {
-        JSONArray jsonArray = jsonObject.getJSONArray("thingies");
+        JSONArray jsonArray = jsonObject.getJSONArray("accounts");
         for (Object json : jsonArray) {
             JSONObject nextAccount= (JSONObject) json;
             addAccount(user, nextAccount);

@@ -23,6 +23,7 @@ public class User {
         addUserAccount(new Account(idCount++, "Chequing", 0));
     }
 
+
     public int getUserID() {
         return userID;
     }
@@ -102,5 +103,9 @@ public class User {
             }
 
             return jsonArray;
+        }
+
+        public static void resetIdCounter() {
+            idCount = 0;
         }
 }
