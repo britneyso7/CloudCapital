@@ -43,6 +43,7 @@ public class JsonReader {
 
     // EFFECTS: parses workroom from JSON object and returns it
     private User parseUser(JSONObject jsonObject) {
+
         
         String userName = jsonObject.getString("userName");
         int userID = jsonObject.getInt("userID");

@@ -7,12 +7,12 @@ import ui.Main;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import java.io.ByteArrayInputStream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.json.JSONObject;
-import org.json.JSONArray;
 
 public class CloudCapitalTests {
     private User testUser;
@@ -41,6 +41,7 @@ public class CloudCapitalTests {
         testUser.withdrawFunds(testUser.getUserAccounts().get(0), 250);
         assertEquals(-250, testUser.getUserAccounts().get(0).getFunds());
     }
+
 
     @Test
     void testAccountToString(){
