@@ -48,4 +48,12 @@ public class Account {
         return funds;
     }
 
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("accountNum", accountNum);       
+        json.put("accountType", accountType);
+        json.put("funds", funds);
+        return json;
+}
+
 }

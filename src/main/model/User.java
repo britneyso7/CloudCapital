@@ -84,7 +84,7 @@ public class User {
 
 
 // Modelled from WorkRoom in JsonSerializationDemo project
-    @Override
+
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("userName", userName);      // 
@@ -97,8 +97,8 @@ public class User {
         private JSONArray accountsToJson() {
             JSONArray jsonArray = new JSONArray();
 
-            for (Account account : userAccounts) {   // Replace with your list field name
-                jsonArray.put(account.toJson());
+            for (Account a : userAccounts) {   // Replace with your list field name
+                jsonArray.put(a.toJson());
             }
 
             return jsonArray;
