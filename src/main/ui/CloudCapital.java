@@ -1,9 +1,11 @@
 package ui;
 
-import model.User;
-
 import model.*;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 import org.json.JSONObject;
@@ -21,6 +23,10 @@ public class CloudCapital {
     private static int idCount;
     private User currentUser;
 
+    private static final String JSON_STORE = "./data/user.json";
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
+
     public CloudCapital() {
         runCloudCapital();
     }
@@ -29,6 +35,8 @@ public class CloudCapital {
         input = new Scanner(System.in);
         idCount = 0;
         boolean keepGoing = true;
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
 
         printGreeting();
         currentUser = createUser();
@@ -61,6 +69,12 @@ public class CloudCapital {
             createNewAccount(currentUser);
         } else if (operation == '4') {
             System.out.println(currentUser.accountsToString());
+        } else if (operation == '5') {
+            saveUser();
+            System.out.println("Saved successfully!");
+        } else if (operation == '6') {
+            loadUser();
+            System.out.println("Loading past transactions");
         } else {
             System.out.println("You did not make a valid selection please choose an operation or exit");
         }
@@ -120,6 +134,32 @@ public class CloudCapital {
         System.out.println("2. Withdraw Funds");
         System.out.println("3. Create new account");
         System.out.println("4. View Account Balances");
+        System.out.println("5. Save");
+        System.out.println("6: Load past transactions");
         System.out.println("x. Exit");
     }
+
+    // EFFECTS: saves current user to file
+private void saveUser() {
+    try {
+        jsonWriter.open();
+        jsonWriter.write(currentUser);
+        jsonWriter.close();
+        System.out.println("Saved user " + currentUser.getUserName() + " to " + JSON_STORE);
+    } catch (FileNotFoundException e) {
+        System.out.println("Unable to write to file: " + JSON_STORE);
+    }
+}
+
+// MODIFIES: this
+// EFFECTS: loads user from file
+private void loadUser() {
+    try {
+        currentUser = jsonReader.read();
+        System.out.println("Loaded user " + currentUser.getUserName() + " from " + JSON_STORE);
+    } catch (IOException e) {
+        System.out.println("Unable to read from file: " + JSON_STORE);
+    }
+}
+
 }

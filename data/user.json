@@ -1,0 +1,9 @@
+{
+    "accounts": [{
+        "accountNum": 0,
+        "accountType": "Chequing",
+        "funds": 0
+    }],
+    "userName": "Britney",
+    "userID": 0
+}
