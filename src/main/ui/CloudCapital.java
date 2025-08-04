@@ -140,26 +140,26 @@ public class CloudCapital {
     }
 
     // EFFECTS: saves current user to file
-private void saveUser() {
-    try {
-        jsonWriter.open();
-        jsonWriter.write(currentUser);
-        jsonWriter.close();
-        System.out.println("Saved user " + currentUser.getUserName() + " to " + JSON_STORE);
-    } catch (FileNotFoundException e) {
-        System.out.println("Unable to write to file: " + JSON_STORE);
+    private void saveUser() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(currentUser);
+            jsonWriter.close();
+            System.out.println("Saved user " + currentUser.getUserName() + " to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
     }
-}
 
-// MODIFIES: this
-// EFFECTS: loads user from file
-private void loadUser() {
-    try {
-        currentUser = jsonReader.read();
-        System.out.println("Loaded user " + currentUser.getUserName() + " from " + JSON_STORE);
-    } catch (IOException e) {
-        System.out.println("Unable to read from file: " + JSON_STORE);
+    // MODIFIES: this
+    // EFFECTS: loads user from file
+    private void loadUser() {
+        try {
+            currentUser = jsonReader.read();
+            System.out.println("Loaded user " + currentUser.getUserName() + " from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
     }
-}
 
 }

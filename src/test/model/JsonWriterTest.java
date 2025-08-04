@@ -17,7 +17,7 @@ public class JsonWriterTest extends JsonTest {
 
     @BeforeEach
     void setup() {
-    User.resetIdCounter();
+        User.resetIdCounter();
     }
 
     @Test
@@ -73,12 +73,11 @@ public class JsonWriterTest extends JsonTest {
             assertEquals(4, accounts.size());
 
             assertEquals(4, accounts.size());
-        checkAccount(1, "Chequing", 0, accounts.get(0));
-        checkAccount(0, "Chequing", 0, accounts.get(1));
+            checkAccount(1, "Chequing", 0, accounts.get(0));
+            checkAccount(0, "Chequing", 0, accounts.get(1));
 
         } catch (IOException e) {
             fail("Exception should not have been thrown");
         }
     }
 }
-    

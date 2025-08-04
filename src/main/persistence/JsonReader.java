@@ -56,7 +56,7 @@ public class JsonReader {
     private void addAccounts(User user, JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("accounts");
         for (Object json : jsonArray) {
-            JSONObject nextAccount= (JSONObject) json;
+            JSONObject nextAccount = (JSONObject) json;
             addAccount(user, nextAccount);
         }
     }
@@ -67,7 +67,7 @@ public class JsonReader {
         int accountNum = jsonObject.getInt("accountNum");
         String accountType = jsonObject.getString("accountType");
         double funds = jsonObject.getDouble("funds");
-        
+
         Account account = new Account(accountNum, accountType, funds);
 
         user.addUserAccount(account);

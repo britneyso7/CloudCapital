@@ -13,7 +13,6 @@ import java.io.ByteArrayInputStream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
 public class CloudCapitalTests {
     private User testUser;
     private Account testAccount;
@@ -28,56 +27,55 @@ public class CloudCapitalTests {
     }
 
     @Test
-    void testAccountID(){
+    void testAccountID() {
         assertEquals(1, testAccount.getAccountNum());
     }
 
     @Test
-    void testAccountDeposit(){
+    void testAccountDeposit() {
         testUser.addFunds(testUser.getUserAccounts().get(0), 500);
         assertEquals(500, testUser.getUserAccounts().get(0).getFunds());
     }
 
     @Test
-    void testAccountWithdrawl(){
+    void testAccountWithdrawl() {
         testUser.withdrawFunds(testUser.getUserAccounts().get(0), 250);
         assertEquals(-250, testUser.getUserAccounts().get(0).getFunds());
     }
 
-
     @Test
-    void testAccountToString(){
+    void testAccountToString() {
         int id = testUser.getUserAccounts().get(0).getAccountNum();
 
-        assertEquals("\nAccount: " + id +", Type: ChequingBalance: $0.0", testUser.accountsToString());
+        assertEquals("\nAccount: " + id + ", Type: ChequingBalance: $0.0", testUser.accountsToString());
     }
 
-    //USER LEVEL TESTS
+    // USER LEVEL TESTS
     @Test
-    void testUserName(){
+    void testUserName() {
         assertEquals("bso7", testUser.getUserName());
     }
 
     @Test
-    void testUserID(){
+    void testUserID() {
         assertEquals(3, testUser.getUserID());
     }
 
     @Test
-    void testCreateAccount(){
-        testUser.addUserAccount(new Account(2,"savings", 0));
+    void testCreateAccount() {
+        testUser.addUserAccount(new Account(2, "savings", 0));
         assertEquals("savings", testUser.getUserAccounts().get(1).getAccountType());
-        testUser.addUserAccount(new Account(3,"chequing", 0));
+        testUser.addUserAccount(new Account(3, "chequing", 0));
         assertEquals("chequing", testUser.getUserAccounts().get(2).getAccountType());
     }
 
     @Test
-    void testExit(){
+    void testExit() {
 
     }
 
     @Test
-    void testCCDesposit(){
+    void testCCDesposit() {
         String simulatedInput = "Britney\nx\n0\n500\n";
         ByteArrayInputStream inputStream = new ByteArrayInputStream(simulatedInput.getBytes());
         System.setIn(inputStream);
@@ -88,7 +86,7 @@ public class CloudCapitalTests {
     }
 
     @Test
-    void testCCWithdraw(){
+    void testCCWithdraw() {
         String simulatedInput = "Britney\nx\n0\n500\n";
         ByteArrayInputStream inputStream = new ByteArrayInputStream(simulatedInput.getBytes());
         System.setIn(inputStream);
@@ -98,9 +96,9 @@ public class CloudCapitalTests {
         assertEquals(-500, testUser.getUserAccounts().get(0).getFunds());
     }
 
-    //MAIN LEVEL TEST
+    // MAIN LEVEL TEST
     @Test
-    void testMain(){
+    void testMain() {
         String simulatedInput = "Britney\n5\nx";
         ByteArrayInputStream inputStream = new ByteArrayInputStream(simulatedInput.getBytes());
         System.setIn(inputStream);
