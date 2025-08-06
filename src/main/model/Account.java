@@ -18,6 +18,7 @@ public class Account {
         this.accountNum = accountNum;
         this.accountType = accountType;
         this.funds = funds;
+        
     }
 
     public int getAccountNum() {
@@ -35,6 +36,7 @@ public class Account {
      */
     public void addFunds(double increment) {
         funds = funds + increment;
+        EventLog.getInstance().logEvent(new Event("Added transaction: $" + funds));
     }
 
     /**
@@ -45,6 +47,7 @@ public class Account {
      */
     public void withdrawFunds(double increment) {
         funds = funds - increment;
+        EventLog.getInstance().logEvent(new Event("Withdrew transaction $" + funds));
     }
 
     public double getFunds() {

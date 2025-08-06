@@ -3,6 +3,7 @@ package ui;
 import model.*;
 import persistence.JsonReader;
 import persistence.JsonWriter;
+import model.Event;
 
 import javax.swing.*;
 import java.awt.*;
@@ -29,7 +30,14 @@ public class CloudCapitalGUI extends JFrame {
 
     private void initializeUI() {
         setTitle("CloudCapital");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                printEventLog(); // <-- prints all logged events
+                System.exit(0);
+                }
+        });
         setSize(500, 400);
         setLocationRelativeTo(null);
 
@@ -106,7 +114,7 @@ public class CloudCapitalGUI extends JFrame {
     }
 
     private void createAccountDialog() {
-        String[] options = {"Chequing", "Savings"};
+        String[] options = { "Chequing", "Savings" };
         int choice = JOptionPane.showOptionDialog(this,
                 "Select account type:",
                 "Create Account",
@@ -155,7 +163,7 @@ public class CloudCapitalGUI extends JFrame {
         for (Account acc : currentUser.getUserAccounts()) {
             accountComboBoxModel.addElement(acc);
             sb.append("[").append(acc.getAccountType()).append(" - $")
-              .append(acc.getFunds()).append("]\n");
+                    .append(acc.getFunds()).append("]\n");
         }
         accountInfoArea.setText(sb.toString());
     }
@@ -177,6 +185,12 @@ public class CloudCapitalGUI extends JFrame {
             JOptionPane.showMessageDialog(this, "User loaded: " + currentUser.getUserName());
         } catch (IOException e) {
             JOptionPane.showMessageDialog(this, "Error loading user.");
+        }
+    }
+
+    private void printEventLog() {
+        for (Event e : EventLog.getInstance()) {
+            System.out.println(e);
         }
     }
 

@@ -50,3 +50,15 @@ application) will be tracked.
 - As a client, I want to be able to download my transaction history for each account
 - As a client, I want to be able to save my account data so that I can access it next time I use the application
 - As a user, I want to be able to load my previous saved account date from so that I can continue from where I left off.
+
+### Phase 4: Task 2
+Wed Aug 06 03:23:07 PDT 2025
+Created a new account
+Wed Aug 06 03:23:12 PDT 2025
+Added transaction: $10.0
+Wed Aug 06 03:23:17 PDT 2025
+Withdrew transaction $5.0
+Wed Aug 06 03:23:21 PDT 2025
+Created a new account
+Wed Aug 06 03:23:21 PDT 2025
+Created a new account

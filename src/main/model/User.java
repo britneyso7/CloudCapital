@@ -57,8 +57,7 @@ public class User {
      * MODIFIES: a
      * EFFECTS: Adds funds to the given account
      * 
-     @param a
-     @param amount
+ 
      */
     public void addFunds(Account a, double amount) {
         a.addFunds(amount);
@@ -81,6 +80,7 @@ public class User {
      */
     public void addUserAccount(Account acc) {
         userAccounts.add(acc);
+        EventLog.getInstance().logEvent(new Event("Created a new account"));
     }
 
     // Modelled from WorkRoom in JsonSerializationDemo project
