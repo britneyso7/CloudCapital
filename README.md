@@ -62,3 +62,9 @@ Wed Aug 06 03:23:21 PDT 2025
 Created a new account
 Wed Aug 06 03:23:21 PDT 2025
 Created a new account
+
+
+### Phase 4: Task 3
+Reflecting on the design shown in oUML class diagram, one area that could benefit from refactoring is the relationship between our model classes and the UI components. Currently, the UI logic is somewhat tightly coupled with the model, especially in how state updates and display logic are handled. If we had more time, we would aim to separate concerns more cleanly by introducing a controller or service layer that intermediates between the UI and model. This would improve testability, reduce duplication, and make the codebase easier to maintain and scale.
+
+Additionally, there are opportunities to extract common logic from similar classes. For example, if multiple account types or user-related classes share similar behavior (ex. formatting outputs, managing identifiers), I could refactor this shared logic into an abstract superclass or utility class. This would reduce redundancy and make the system more extensible for future features. These improvements would align our architecture more closely with software design principles and enhance overall code clarity.
