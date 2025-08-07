@@ -8,8 +8,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
-import org.json.JSONObject;
-import org.json.JSONArray;
 
 /*
     For phase 1 the following user stories are addressed
