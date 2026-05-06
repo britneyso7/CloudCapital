@@ -35,8 +35,6 @@ application) will be tracked.
 
 - Experience the convenience and security of JavaBank as you navigate through its feature-rich functionalities, making banking tasks a breeze.
 
-- Conversion Rates: Able to convert certain amounts across different fiat currencies
-
 
 ### User Stories
 
