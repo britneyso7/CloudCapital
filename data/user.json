@@ -1,9 +1,16 @@
 {
-    "accounts": [{
-        "accountNum": 0,
-        "accountType": "Chequing",
-        "funds": 5
-    }],
+    "accounts": [
+        {
+            "accountNum": 0,
+            "accountType": "Chequing",
+            "funds": 9
+        },
+        {
+            "accountNum": 1,
+            "accountType": "savings",
+            "funds": 0
+        }
+    ],
     "userName": "britney",
     "userID": 0
 }
